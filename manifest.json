@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "tetraslam.familiar",
+  "name": "Familiar",
+  "version": "0.1.0",
+  "author": "Shresht Bhowmick",
+  "license": "MIT",
+  "description": "A little pixel fox that lives in your bar and reacts to your day: sleeps when you're away, types along with your agents, wears headphones to your music, hops when you commit. Right-click tucks it into a zero-battery nap.",
+  "kinds": ["bar-widget"],
+  "entryPoints": { "barWidget": "Familiar.qml" },
+  "barWidget": {
+    "displayName": "Familiar",
+    "description": "A pixel fox that reacts to what you're doing. Click to pet, scroll for belly rubs, middle-click for a berry, right-click to tuck it in.",
+    "category": "Fun",
+    "aliases": ["familiar", "pet", "fox", "kit", "tamagotchi"],
+    "allowMultiple": false,
+    "defaultSection": "left",
+    "defaults": { "name": "kit", "yard": "Medium", "napOnBattery": false, "projectsDir": "~/Programming" },
+    "schema": [
+      { "key": "name", "type": "string", "label": "Name", "defaultValue": "kit" },
+      { "key": "yard", "type": "enum", "label": "Room to wander", "options": ["Small", "Medium", "Large"], "defaultValue": "Medium" },
+      { "key": "napOnBattery", "type": "boolean", "label": "Nap whenever unplugged", "defaultValue": false,
+        "description": "A nap is one still frame with every timer and check stopped." },
+      { "key": "projectsDir", "type": "path", "label": "Where your repos live", "defaultValue": "~/Programming",
+        "description": "New commits here make it hop." }
+    ]
+  }
+}
